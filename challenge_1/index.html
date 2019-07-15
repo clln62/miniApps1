@@ -2,30 +2,35 @@
 <html>
     <head></head>
     <body>
-        <table border='1'>
-            <thead>
-                <tr>
-                    <th colspan="3">TIC TAC TOE</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id='cell1' height='25' width='25' onclick="clicked(id)"></td>
-                    <td id='cell2' width='25' onclick="clicked(id)"></td>
-                    <td id='cell3' width='25' onclick="clicked(id)"></td>
-                </tr>
-                <tr>
-                    <td id='cell4' height='25' width='25' onclick="clicked(id)"></td>
-                    <td id='cell5' width='25' onclick="clicked(id)"></td>
-                    <td id='cell6' width='25' onclick="clicked(id)"></td>
-                </tr>
-                <tr>
-                    <td id='cell7' height='25' width='25' onclick="clicked(id)"></td>
-                    <td id='cell8' width='25' onclick="clicked(id)"></td>
-                    <td id='cell9' width='25' onclick="clicked(id)"></td>
-                </tr>
-            </tbody>
-        </table>
+        <div align="center">
+            <form>
+                <table border='1' id='table'>
+                    <thead>
+                        <tr>
+                            <th colspan="3">TIC TAC TOE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id='cell1' height='75' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                            <td id='cell2' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                            <td id='cell3' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                        </tr>
+                        <tr>
+                            <td id='cell4' height='75' width='75' onclick="wasClicked:false; clicked(id)" style="color: red; text-align: center"></td>
+                            <td id='cell5' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                            <td id='cell6' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                        </tr>
+                        <tr>
+                            <td id='cell7' height='75' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                            <td id='cell8' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                            <td id='cell9' width='75' onclick="clicked(id)" style="color: red; text-align: center"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button onreset="newGame()" align="center">New Game</button>
+            </form>
+        </div>
         <script src='app.js'></script>
     </body>
 </html>
