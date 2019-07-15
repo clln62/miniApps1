@@ -6,28 +6,21 @@ let counter = 1;
 function clicked (id) {
     let cell = document.getElementById(id);
     let wasClicked = 'clicked';
-    // if (storage[id] !== wasClicked) {
-        // if counter is odd 
-        if (cell.style.color == 'red') {
-            if (counter % 2 !== 0) {
-                // display X
-                cell.innerHTML = 'X';
-                // increment counter
-                counter++;
-                cell.style.display = 'blocked';
-            } else {
-            // else
-                // display O
-                cell.innerHTML = 'O';
-                // increment counter
-                counter++;
-            }
-            cell.style.color = 'black';
+
+    if (cell.innerHTML == '') {
+        if (counter % 2 !== 0) {
+            cell.innerHTML = 'X';
+            counter++;
+        } else {
+            cell.innerHTML = 'O';
+            counter++;
         }
-        // storage.id = wasClicked;
-        // console.log(cell.wasClicked)
-    // }
+        // cell.style.color = 'black';
+    }
+
+    if 
 }
+
 
 function newGame () {
     document.getElementById("table").innerHTML = '';
