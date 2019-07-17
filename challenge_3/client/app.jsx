@@ -28,49 +28,45 @@ class App extends React.Component {
         }
     }
 
-    nextClicked(id) {
-        const element = document.getElementById(id);
-        if (id === 'F1') {
-            ReactDOM.render(<App/>, document.getElementById('app'));
-        }
-        if (id === 'F2') {
-
-        }
-        if (id === 'F3') {
-
-        }
+    nextClicked(username, userEmail, userPassword) {
+        this.setState({name: username});
+        this.setState({email: userEmail});
+        this.setState({password: userPassword})
+        this.setState({F1:false});
+        this.setState({F2: true});
     };
 
     checkoutClicked() {
-        this.state.home = false;
-        this.state.F1 = true;
+        this.setState({home:false});
+        this.setState({F1: true});
     };
 
     purchaseClicked() {
         document.getElementById('purchase');
     };
+    
 
     render() {
         if (this.state.home === true) {
             return (
                 <div>
-                    <button type="button" id="checkout" onClick={this.checkoutClicked()}>Checkout</button>
+                    <button type="button" id="checkout" onClick={this.checkoutClicked.bind(this)}>Checkout</button>
                 </div>
             );
         }
         if (this.state.F1 === true) {
             return (
                 <div>
-                    <form style="text-align: center">Name:
-                        <textarea></textarea>
+                    <form>Name:
+                        <textarea id="name"></textarea>
                     </form>
                     <form>Email:
-                        <textarea></textarea>
+                        <textarea id="email"></textarea>
                     </form>
                     <form>Create a password:
-                        <textarea></textarea>
+                        <textarea id="password"></textarea>
                     </form>
-                    <button type="button" onClick={this.nextClicked(id)}>Next</button>
+                    <button type="button" onClick={this.nextClicked.bind(this)}>Next</button>
                 </div>
             );
         }
@@ -88,7 +84,7 @@ class App extends React.Component {
                         <textarea></textarea>
                     </form>
 
-                    <button id="F2" type="button" onClick={this.nextClicked(id)}>Next</button>
+                    <button id="F2" type="button" onClick={this.nextClicked.bind(this)}>Next</button>
                 </div>
             );
         }
@@ -107,7 +103,7 @@ class App extends React.Component {
                     <form>Billing Zip Code:
                         <textarea></textarea>
                     </form>
-                    <button id="F3" type="button" onClick={this.nextClicked(id)}>Next</button>
+                    <button id="F3" type="button" onClick={this.nextClicked.bind(this)}>Next</button>
                 </div>
 
             );
@@ -115,7 +111,7 @@ class App extends React.Component {
         if (this.state.confirm === true) {
             return (
                 <div>
-                    <button id="purchase" type="button" onClick={this.purchaseClicked()}>Purchase</button>
+                    <button id="purchase" type="button" onClick={this.purchaseClicked.bind(this)}>Purchase</button>
                 </div>
 
             );
