@@ -29,12 +29,22 @@ class App extends React.Component {
     }
 
     nextClicked(username, userEmail, userPassword) {
-        this.setState({name: username});
-        this.setState({email: userEmail});
-        this.setState({password: userPassword})
+        // this.setState({name: username});
+        // this.setState({email: userEmail});
+        // this.setState({password: userPassword})
         this.setState({F1:false});
         this.setState({F2: true});
     };
+
+    F2nextClicked() {
+        this.setState({F2:false});
+        this.setState({F3: true});
+    }
+
+    F3nextClicked() {
+        this.setState({F3:false});
+        this.setState({confirm: true});
+    }
 
     checkoutClicked() {
         this.setState({home:false});
@@ -42,7 +52,8 @@ class App extends React.Component {
     };
 
     purchaseClicked() {
-        document.getElementById('purchase');
+        this.setState({confirm: false});
+        this.setState({home: true});
     };
     
 
@@ -58,13 +69,13 @@ class App extends React.Component {
             return (
                 <div>
                     <form>Name:
-                        <textarea id="name"></textarea>
+                        <textarea></textarea>
                     </form>
                     <form>Email:
-                        <textarea id="email"></textarea>
+                        <textarea></textarea>
                     </form>
                     <form>Create a password:
-                        <textarea id="password"></textarea>
+                        <textarea></textarea>
                     </form>
                     <button type="button" onClick={this.nextClicked.bind(this)}>Next</button>
                 </div>
@@ -74,17 +85,16 @@ class App extends React.Component {
             return (
                 <div>
                     <form>Address:
-                        <textarea>Line 1</textarea>
-                        <textarea>Line 2</textarea>
-                        <textarea>City</textarea>
-                        <textarea>State</textarea>
-                        <textarea>Zip Code</textarea>
+                            <textarea value="Line 1"></textarea>
+                            <textarea value="Line 2"></textarea>
+                            <textarea value="City"></textarea>
+                            <textarea value="State"></textarea>
+                            <textarea value="Zip Code"></textarea>
                     </form>
                     <form>Phone:
-                        <textarea></textarea>
+                            <textarea></textarea>
                     </form>
-
-                    <button id="F2" type="button" onClick={this.nextClicked.bind(this)}>Next</button>
+                    <button type="button" onClick={this.F2nextClicked.bind(this)}>Next</button>
                 </div>
             );
         }
@@ -103,7 +113,7 @@ class App extends React.Component {
                     <form>Billing Zip Code:
                         <textarea></textarea>
                     </form>
-                    <button id="F3" type="button" onClick={this.nextClicked.bind(this)}>Next</button>
+                    <button id="F3" type="button" onClick={this.F3nextClicked.bind(this)}>Next</button>
                 </div>
 
             );
