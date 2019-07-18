@@ -1,3 +1,7 @@
+// const path = require('path');
+// const SRC_DIR = path.join(__dirname, '/client');
+// const DIST_DIR = path.join(__dirname, '/dist');
+
 module.exports = {
     entry: __dirname + '/client/src/index.jsx',
     module: {
@@ -11,6 +15,11 @@ module.exports = {
               presets: ['@babel/preset-react', '@babel/preset-env']
             }
           }
+        },
+        {
+            test: /\.css?/,
+            include : SRC_DIR,
+            use: ['style-loader', 'css-loader'],
         }
       ]
     },
