@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 // import '../../style.css';
 import Table from './components/component1.jsx'
+import axios from 'axios'
 
 let connect = [ [0, 0, 0, 0, 0, 0, 0], //column 1
                 [0, 0, 0, 0, 0, 0, 0], //column 2
